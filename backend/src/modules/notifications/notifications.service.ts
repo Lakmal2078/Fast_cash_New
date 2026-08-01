@@ -36,6 +36,8 @@ export const notificationsService = {
     type?: string;
     metadata?: Record<string, unknown>;
   }) {
-    return prisma.notification.create({ data });
+    return prisma.notification.create({
+      data: { ...data, metadata: data.metadata as object | undefined },
+    });
   },
 };

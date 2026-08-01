@@ -21,7 +21,7 @@ export const auditService = {
           action: entry.action,
           entityType: entry.entityType,
           entityId: entry.entityId,
-          metadata: entry.metadata,
+          metadata: entry.metadata ? JSON.parse(JSON.stringify(entry.metadata)) : undefined,
           ipAddress: entry.ipAddress,
           userAgent: entry.userAgent,
         },

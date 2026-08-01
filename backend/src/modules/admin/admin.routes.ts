@@ -102,7 +102,7 @@ router.get('/deposits', async (req: Request, res: Response, next: NextFunction) 
 
 router.post('/deposits/:id/approve', async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const result = await depositsService.approve(req.params.id, req.user!.userId, req.ip);
+    const result = await depositsService.approve(req.params.id as string, req.user!.userId, req.ip);
     return successResponse(res, result);
   } catch (err) { return next(err); }
 });
@@ -111,7 +111,7 @@ router.post('/deposits/:id/reject', async (req: Request, res: Response, next: Ne
   try {
     const { reason } = req.body;
     if (!reason) return errorResponse(res, 'MISSING_REASON', 'Rejection reason is required', 422);
-    const result = await depositsService.reject(req.params.id, req.user!.userId, reason, req.ip);
+    const result = await depositsService.reject(req.params.id as string, req.user!.userId, reason, req.ip);
     return successResponse(res, result);
   } catch (err) { return next(err); }
 });
@@ -149,7 +149,7 @@ router.get('/withdrawals', async (req: Request, res: Response, next: NextFunctio
 
 router.post('/withdrawals/:id/approve', async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const result = await withdrawalsService.approve(req.params.id, req.user!.userId, req.ip);
+    const result = await withdrawalsService.approve(req.params.id as string, req.user!.userId, req.ip);
     return successResponse(res, result);
   } catch (err) { return next(err); }
 });
@@ -158,7 +158,7 @@ router.post('/withdrawals/:id/reject', async (req: Request, res: Response, next:
   try {
     const { reason } = req.body;
     if (!reason) return errorResponse(res, 'MISSING_REASON', 'Rejection reason is required', 422);
-    const result = await withdrawalsService.reject(req.params.id, req.user!.userId, reason, req.ip);
+    const result = await withdrawalsService.reject(req.params.id as string, req.user!.userId, reason, req.ip);
     return successResponse(res, result);
   } catch (err) { return next(err); }
 });
@@ -197,7 +197,7 @@ router.get('/customers', async (req: Request, res: Response, next: NextFunction)
 router.patch('/customers/:id/toggle', async (req: Request, res: Response, next: NextFunction) => {
   try {
     const user = await prisma.user.update({
-      where: { id: req.params.id },
+      where: { id: req.params.id as string },
       data: { isActive: req.body.isActive },
       select: { id: true, username: true, isActive: true },
     });
@@ -235,7 +235,7 @@ router.post('/promos', async (req: Request, res: Response, next: NextFunction) =
 
 router.put('/promos/:id', async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const promo = await prisma.promoCode.update({ where: { id: req.params.id }, data: req.body });
+    const promo = await prisma.promoCode.update({ where: { id: req.params.id as string }, data: req.body });
     return successResponse(res, promo);
   } catch (err) { return next(err); }
 });
@@ -264,10 +264,11 @@ router.get('/settings', async (_req: Request, res: Response, next: NextFunction)
 
 router.put('/settings/:key', async (req: Request, res: Response, next: NextFunction) => {
   try {
+    const key = req.params.key as string;
     const setting = await prisma.systemSetting.upsert({
-      where: { key: req.params.key },
+      where: { key },
       update: { value: req.body.value },
-      create: { key: req.params.key, value: req.body.value, label: req.body.label, group: req.body.group || 'general' },
+      create: { key, value: req.body.value, label: req.body.label, group: req.body.group || 'general' },
     });
     return successResponse(res, setting);
   } catch (err) { return next(err); }

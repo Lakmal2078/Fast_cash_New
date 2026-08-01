@@ -67,7 +67,7 @@ export const depositsService = {
     await prisma.idempotencyRecord.create({
       data: {
         key: data.idempotencyKey,
-        response: deposit as unknown as Record<string, unknown>,
+        response: deposit as unknown as object,
         expiresAt: new Date(Date.now() + 24 * 60 * 60 * 1000),
       },
     });

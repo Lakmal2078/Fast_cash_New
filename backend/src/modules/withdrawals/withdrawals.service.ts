@@ -94,7 +94,7 @@ export const withdrawalsService = {
       await prisma.idempotencyRecord.create({
         data: {
           key: data.idempotencyKey,
-          response: withdrawal as unknown as Record<string, unknown>,
+          response: withdrawal as unknown as object,
           expiresAt: new Date(Date.now() + 24 * 60 * 60 * 1000),
         },
       });

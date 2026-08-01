@@ -48,7 +48,7 @@ export const paymentsController = {
 
   async update(req: Request, res: Response, next: NextFunction) {
     try {
-      const account = await paymentsService.update(req.params.id, req.body);
+      const account = await paymentsService.update(req.params.id as string, req.body);
       return successResponse(res, account);
     } catch (err) {
       return next(err);
@@ -57,7 +57,7 @@ export const paymentsController = {
 
   async toggle(req: Request, res: Response, next: NextFunction) {
     try {
-      const account = await paymentsService.update(req.params.id, { isActive: req.body.isActive });
+      const account = await paymentsService.update(req.params.id as string, { isActive: req.body.isActive });
       return successResponse(res, account);
     } catch (err) {
       return next(err);

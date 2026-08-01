@@ -65,7 +65,7 @@ export const depositsController = {
 
   async getOne(req: Request, res: Response, next: NextFunction) {
     try {
-      const deposit = await depositsService.getById(req.params.id, req.user!.userId);
+      const deposit = await depositsService.getById(req.params.id as string, req.user!.userId);
       return successResponse(res, deposit);
     } catch (err) {
       return next(err);
@@ -93,7 +93,7 @@ export const depositsController = {
           return errorResponse(res, 'NO_FILE', 'No file uploaded', 400);
         }
 
-        const key = decodeURIComponent(req.params.key);
+        const key = decodeURIComponent(req.params.key as string);
         const allowedKeyPattern = /^receipts\/[a-zA-Z0-9_-]+\/[a-zA-Z0-9_.-]+$/;
         if (!allowedKeyPattern.test(key)) {
           return errorResponse(res, 'INVALID_KEY', 'Invalid file key', 400);

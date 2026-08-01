@@ -25,7 +25,7 @@ const AdminPromos = lazy(() => import('../pages/admin/Promos'));
 const AdminAuditLogs = lazy(() => import('../pages/admin/AuditLogs'));
 const AdminSettings = lazy(() => import('../pages/admin/Settings'));
 
-function wrap(Component: React.LazyExoticComponent<() => JSX.Element>) {
+function wrap(Component: React.LazyExoticComponent<() => JSX.Element | null>) {
   return (
     <Suspense fallback={<LoadingPage />}>
       <Component />

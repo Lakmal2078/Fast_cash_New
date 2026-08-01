@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { Users, ArrowDownCircle, ArrowUpCircle, TrendingUp, TrendingDown, CheckCircle, XCircle } from 'lucide-react';
 import { adminApi } from '../../api/admin';
-import { AdminDashboard, DepositRequest, WithdrawalRequest, TransactionStatus } from '../../types';
+import type { AdminDashboard, DepositRequest, WithdrawalRequest, TransactionStatus } from '../../types';
 import StatusBadge from '../../components/ui/StatusBadge';
 import { SkeletonCard } from '../../components/ui/Skeleton';
 import { format } from 'date-fns';

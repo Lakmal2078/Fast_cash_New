@@ -16,7 +16,7 @@ router.get('/', authenticate, async (req: Request, res: Response, next: NextFunc
 
 router.patch('/:id/read', authenticate, async (req: Request, res: Response, next: NextFunction) => {
   try {
-    await notificationsService.markRead(req.user!.userId, req.params.id);
+    await notificationsService.markRead(req.user!.userId, req.params.id as string);
     return successResponse(res, { message: 'Marked as read' });
   } catch (err) { return next(err); }
 });
