@@ -1,0 +1,208 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --navy: #08121f;
+    --deep: #0d1f3c;
+    --blue: #1e5be8;
+    --bright: #3a7fff;
+    --gold: #f5c518;
+    --white: #ffffff;
+    --gray: #d0dcf0;
+    --muted: #6a87b0;
+    --green: #00e87a;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Rajdhani', 'Noto Sans Sinhala', sans-serif;
+    background-color: #08121f;
+    color: #ffffff;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .xbet-bg {
+    background: #08121f;
+    position: relative;
+  }
+
+  .xbet-bg::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 15% 10%, rgba(30,91,232,.22) 0%, transparent 50%),
+      radial-gradient(ellipse at 85% 90%, rgba(26,58,107,.30) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .xbet-bg::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(58,127,255,.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(58,127,255,.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .page-container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-blue {
+    background: linear-gradient(135deg, #162f80, #1e5be8, #2a6aff);
+    border-radius: 1.375rem;
+    border: 1px solid rgba(255,255,255,.12);
+    box-shadow: 0 24px 64px rgba(30,91,232,.45);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-dark {
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(58,127,255,.18);
+    border-radius: 0.875rem;
+  }
+
+  .btn-gold {
+    background: #f5c518;
+    color: #111100;
+    font-family: 'Teko', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    padding: 14px 48px;
+    border: none;
+    cursor: pointer;
+    animation: pulse-gold 2s ease-in-out infinite;
+    transition: all 0.25s;
+  }
+
+  .btn-gold:hover {
+    transform: translateY(-2px) scale(1.03);
+    background: #ffd700;
+  }
+
+  .btn-blue {
+    background: linear-gradient(135deg, #1e5be8, #3a7fff);
+    color: white;
+    border-radius: 0.75rem;
+    padding: 12px 24px;
+    font-family: 'Teko', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .btn-blue:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+
+  .btn-wa {
+    display: block;
+    width: 100%;
+    background: linear-gradient(90deg, #25d366, #128c7e);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 14px;
+    font-family: 'Teko', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.22s;
+    box-shadow: 0 6px 20px rgba(37,211,102,.3);
+    text-align: center;
+  }
+
+  .btn-wa:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(37,211,102,.5);
+  }
+
+  .input-xbet {
+    width: 100%;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(58,127,255,.35);
+    border-radius: 10px;
+    padding: 12px 16px;
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: border-color 0.2s;
+    outline: none;
+  }
+
+  .input-xbet:focus {
+    border-color: #3a7fff;
+    box-shadow: 0 0 0 3px rgba(58,127,255,.15);
+  }
+
+  .input-xbet::placeholder {
+    color: #6a87b0;
+  }
+
+  .status-pending   { background: rgba(245,197,24,.12); color: #f5c518; border: 1px solid rgba(245,197,24,.3); }
+  .status-approved  { background: rgba(0,232,122,.12);  color: #00e87a; border: 1px solid rgba(0,232,122,.3); }
+  .status-rejected  { background: rgba(255,80,80,.12);  color: #ff5050; border: 1px solid rgba(255,80,80,.3); }
+  .status-cancelled { background: rgba(106,135,176,.12);color: #6a87b0; border: 1px solid rgba(106,135,176,.3); }
+  .status-under-review { background: rgba(58,127,255,.12); color: #3a7fff; border: 1px solid rgba(58,127,255,.3); }
+
+  .teko { font-family: 'Teko', sans-serif; }
+  .sinhala { font-family: 'Noto Sans Sinhala', sans-serif; }
+}
+
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 6px 28px rgba(245,197,24,.5); }
+  50%       { box-shadow: 0 6px 44px rgba(245,197,24,.85); }
+}
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.15; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(110%); }
+  to   { transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-ticker   { animation: ticker 20s linear infinite; }
+.animate-blink    { animation: blink 1.2s ease-in-out infinite; }
+.animate-slide-up { animation: slideUp 0.3s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.animate-fade-in  { animation: fadeInUp 0.6s ease-out both; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(58,127,255,.3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(58,127,255,.5); }
