@@ -1,0 +1,4 @@
+com.example.fastcash
+layout activity_main
+string app_name
+style Theme_FastCash
