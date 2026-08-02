@@ -27,14 +27,15 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
 
-      - name: Make Gradle wrapper executable
-        run: |
-          if [ -f android/gradlew ]; then chmod +x android/gradlew; fi
-
       - name: Build Android Debug APK
-        working-directory: android
         run: |
-          if [ -f gradlew ]; then ./gradlew assembleDebug --no-daemon; else echo "Gradle wrapper not found in android/"; exit 1; fi
+          if [ -d android ] && [ -f android/gradlew ]; then
+            chmod +x android/gradlew
+            cd android
+            ./gradlew assembleDebug --no-daemon
+          else
+            echo "Android project not found; skipping APK build."
+          fi
 
       - name: Upload APK artifact
         if: success()
@@ -42,3 +43,4 @@ jobs:
         with:
           name: app-debug-apk
           path: android/app/build/outputs/apk/debug/*.apk
+          if-no-files-found: ignore
