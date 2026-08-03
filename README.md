@@ -1,10 +1,14 @@
-💰 Fast Cash — Sri Lanka Cashier Management System
+# 💰 Fast Cash — Sri Lanka Cashier Management System
 
 <p align="center">
   <strong>🇱🇰 Mobile-first Cashier Management Platform for Web & Android</strong>
-</p><p align="center">
+</p>
+
+<p align="center">
   A full-stack digital cashier system designed around customer accounts, deposits, withdrawals, transaction management, administration, and secure API workflows.
-</p><p align="center">
+</p>
+
+<p align="center">
   <a href="https://github.com/Lakmal2078/Fast_cash_New">
     <img src="https://img.shields.io/badge/GitHub-Fast__cash__New-181717?style=for-the-badge&logo=github" alt="GitHub">
   </a>
@@ -13,9 +17,11 @@
   <img src="https://img.shields.io/badge/Node.js-Express-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js">
   <img src="https://img.shields.io/badge/PostgreSQL-Prisma-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL">
   <img src="https://img.shields.io/badge/Android-Java-3DDC84?style=for-the-badge&logo=android&logoColor=white" alt="Android">
-</p>---
+</p>
 
-🇱🇰 සිංහලෙන් | Project එක ගැන
+---
+
+## 🇱🇰 සිංහලෙන් | Project එක ගැන
 
 Fast Cash යනු customer සහ admin workflows එකට සම්බන්ධ කරන full-stack cashier management system එකකි.
 
@@ -34,11 +40,11 @@ Fast Cash යනු customer සහ admin workflows එකට සම්බන්
 
 වැනි workflows සඳහා fast, secure, reliable සහ mobile-friendly digital experience එකක් ලබාදීමයි.
 
-«⚠️ Important: මෙම project එක financial / transaction-related workflows සමඟ සම්බන්ධ වන බැවින් production deployment එකකට පෙර security, authorization, financial logic, storage, secrets, payment integrations සහ applicable legal/regulatory requirements වෙනම audit කළ යුතුය.»
+> ⚠️ **Important:** මෙම project එක financial / transaction-related workflows සමඟ සම්බන්ධ වන බැවින් production deployment එකකට පෙර security, authorization, financial logic, storage, secrets, payment integrations සහ applicable legal/regulatory requirements වෙනම audit කළ යුතුය.
 
 ---
 
-🇬🇧 About the Project
+## 🇬🇧 About the Project
 
 Fast Cash is a full-stack cashier management platform combining a modern web frontend, REST API backend, database layer, and Android WebView client.
 
@@ -59,9 +65,9 @@ The project is built with a mobile-first approach and is intended to provide a c
 
 ---
 
-✨ Core Features
+## ✨ Core Features
 
-👤 Customer Features
+### 👤 Customer Features
 
 - 🔐 Registration & Login
 - 📊 Customer Dashboard
@@ -74,9 +80,7 @@ The project is built with a mobile-first approach and is intended to provide a c
 - 🎟️ Promo Code Support
 - 📱 Mobile-first UI
 
----
-
-🛠️ Admin Features
+### 🛠️ Admin Features
 
 - 📊 Admin Dashboard
 - 💰 Deposit Management
@@ -90,23 +94,23 @@ The project is built with a mobile-first approach and is intended to provide a c
 
 ---
 
-🔐 Security Architecture
+## 🔐 Security Architecture
 
 The backend includes several security-oriented mechanisms.
 
-Authentication
+### Authentication
 
 - JWT-based authentication
-- Password hashing with "bcryptjs"
+- Password hashing with `bcryptjs`
 - Role-based access control
 
-Roles
+**Roles**
 
-CUSTOMER
-ADMIN
-SUPER_ADMIN
+- `CUSTOMER`
+- `ADMIN`
+- `SUPER_ADMIN`
 
-API Security
+### API Security
 
 - Helmet security headers
 - CORS configuration
@@ -115,7 +119,7 @@ API Security
 - Input validation with Zod
 - Protected administrative routes
 
-Transaction Safety
+### Transaction Safety
 
 Financial state changes should be handled atomically.
 
@@ -127,7 +131,7 @@ The architecture includes:
 - Audit logging
 - Protected authorization checks
 
-File Upload Security
+### File Upload Security
 
 Receipt uploads are designed around validation and controlled storage.
 
@@ -139,12 +143,13 @@ Security considerations include:
 - Path-traversal protection
 - Controlled storage access
 
-«Production note: Security mechanisms must be tested under real-world attack and concurrency scenarios. Their presence in source code does not automatically guarantee a secure production deployment.»
+> **Production note:** Security mechanisms must be tested under real-world attack and concurrency scenarios. Their presence in source code does not automatically guarantee a secure production deployment.
 
 ---
 
-🏗️ System Architecture
+## 🏗️ System Architecture
 
+```
                     ┌──────────────────────┐
                     │      Customers       │
                     └──────────┬───────────┘
@@ -177,33 +182,36 @@ Security considerations include:
        │   PostgreSQL    │
        │     Database    │
        └─────────────────┘
+```
 
 ---
 
-🧰 Technology Stack
+## 🧰 Technology Stack
 
-Layer| Technologies
-📱 Android| Java, Android SDK, WebView
-🎨 Frontend| React 18, TypeScript, Vite
-🎨 Styling| Tailwind CSS
-📡 API Client| Axios
-🔄 Data Fetching| TanStack Query
-📝 Forms| React Hook Form, Zod
-🧭 Routing| React Router
-📊 Charts| Recharts
-🎨 Icons| Lucide React
-⚙️ Backend| Node.js, Express, TypeScript
-🗄️ ORM| Prisma
-🐘 Database| PostgreSQL
-🔐 Auth| JWT, bcryptjs
-🛡️ Security| Helmet, CORS, express-rate-limit
-📁 Uploads| Multer / Storage abstraction
-🔧 Development| Git, GitHub, npm
+| Layer | Technologies |
+|-------|--------------|
+| 📱 Android | Java, Android SDK, WebView |
+| 🎨 Frontend | React 18, TypeScript, Vite |
+| 🎨 Styling | Tailwind CSS |
+| 📡 API Client | Axios |
+| 🔄 Data Fetching | TanStack Query |
+| 📝 Forms | React Hook Form, Zod |
+| 🧭 Routing | React Router |
+| 📊 Charts | Recharts |
+| 🎨 Icons | Lucide React |
+| ⚙️ Backend | Node.js, Express, TypeScript |
+| 🗄️ ORM | Prisma |
+| 🐘 Database | PostgreSQL |
+| 🔐 Auth | JWT, bcryptjs |
+| 🛡️ Security | Helmet, CORS, express-rate-limit |
+| 📁 Uploads | Multer / Storage abstraction |
+| 🔧 Development | Git, GitHub, npm |
 
 ---
 
-📂 Project Structure
+## 📂 Project Structure
 
+```
 Fast_cash_New/
 │
 ├── android/
@@ -246,12 +254,13 @@ Fast_cash_New/
 ├── replit.md
 ├── .env.example
 └── README.md
+```
 
 ---
 
-🚀 Getting Started
+## 🚀 Getting Started
 
-1️⃣ Requirements
+### 1️⃣ Requirements
 
 Install:
 
@@ -262,118 +271,125 @@ Install:
 - Android Studio + Android SDK — only if building Android
 - Java 17 — required for the Android module
 
----
+### 2️⃣ Clone Repository
 
-2️⃣ Clone Repository
-
+```bash
 git clone https://github.com/Lakmal2078/Fast_cash_New.git
 cd Fast_cash_New
+```
 
 ---
 
-⚙️ Backend Setup
+## ⚙️ Backend Setup
 
 Move into the backend:
 
+```bash
 cd backend
+```
 
 Install dependencies:
 
+```bash
 npm install
+```
 
-Create your local environment configuration.
+Create your local environment configuration. Example:
 
-Example:
-
+```env
 DATABASE_URL=postgresql://USER:PASSWORD@HOST:5432/DATABASE
 JWT_SECRET=replace-with-a-long-random-secret
 PORT=3001
 NODE_ENV=development
 FRONTEND_URL=http://localhost:5000
 STORAGE_TYPE=local
+```
 
-«Never commit ".env" files, passwords, private keys, API keys, or production secrets.»
+> ⚠️ Never commit `.env` files, passwords, private keys, API keys, or production secrets.
 
 ---
 
-🗄️ Database Setup
+## 🗄️ Database Setup
 
 Generate Prisma Client:
 
+```bash
 npx prisma generate
+```
 
 Apply the schema:
 
+```bash
 npx prisma db push
+```
 
 Seed development data if required:
 
+```bash
 npm run db:seed
+```
 
 ---
 
-▶️ Start Backend
+## ▶️ Start Backend
 
 Development:
 
+```bash
 npm run dev
+```
 
-Backend:
-
-http://localhost:3001
+Backend runs at: `http://localhost:3001`
 
 Production build:
 
+```bash
 npm run build
 npm start
+```
 
 ---
 
-🌐 Frontend Setup
+## 🌐 Frontend Setup
 
 Open a second terminal:
 
+```bash
 cd frontend
-
-Install dependencies:
-
 npm install
-
-Start development server:
-
 npm run dev
+```
 
-Frontend:
-
-http://localhost:5000
+Frontend runs at: `http://localhost:5000`
 
 Build:
 
+```bash
 npm run build
-
-Preview production build:
-
 npm run preview
+```
 
 ---
 
-📱 Android Setup
+## 📱 Android Setup
 
 The Android module is a lightweight native wrapper around the project's web experience.
 
-Current Android configuration
+**Current Android configuration**
 
-Configuration| Value
-Namespace| "com.example.fastcash"
-Application ID| "com.example.fastcash"
-Compile SDK| 34
-Target SDK| 34
-Minimum SDK| 24
-Java| 17
-Version| 1.0
+| Configuration | Value |
+|----------------|-------|
+| Namespace | `com.example.fastcash` |
+| Application ID | `com.example.fastcash` |
+| Compile SDK | 34 |
+| Target SDK | 34 |
+| Minimum SDK | 24 |
+| Java | 17 |
+| Version | 1.0 |
 
 The current Android application uses:
 
+```
 Java
    ↓
 Android Activity
@@ -381,56 +397,59 @@ Android Activity
 WebView
    ↓
 Bundled Web Assets
+```
 
-Build with Android Studio
+**Build with Android Studio**
 
-1. Open the "android/" directory in Android Studio.
+1. Open the `android/` directory in Android Studio.
 2. Allow Gradle synchronization.
 3. Install required Android SDK components.
 4. Select an emulator or physical Android device.
 5. Build and run the application.
 
-«Before a public release, configure release signing, review WebView security settings, remove development identifiers, and test the application on supported Android versions.»
+> **Before a public release:** configure release signing, review WebView security settings, remove development identifiers, and test the application on supported Android versions.
 
 ---
 
-🔌 API Overview
+## 🔌 API Overview
 
 The backend currently exposes routes covering authentication, customer operations, transactions, public data, and administration.
 
-Endpoint| Description
-"GET /api/health"| API health check
-"POST /api/auth/register"| Customer registration
-"POST /api/auth/login"| Customer login
-"GET /api/auth/me"| Current authenticated user
-"GET /api/users/dashboard"| Customer dashboard
-"POST /api/deposits"| Create deposit request
-"GET /api/deposits/my"| Customer deposit history
-"POST /api/deposits/upload-url"| Request receipt upload URL
-"PUT /api/deposits/upload/:key"| Upload receipt
-"POST /api/withdrawals"| Create withdrawal request
-"GET /api/withdrawals/my"| Customer withdrawal history
-"GET /api/payment-accounts"| Public payment accounts
-"GET /api/notifications"| Customer notifications
-"GET /api/public/landing"| Public landing data
-"GET /api/admin/dashboard"| Admin dashboard
-"GET/POST /api/admin/deposits"| Deposit administration
-"POST /api/admin/deposits/:id/approve"| Approve deposit
-"POST /api/admin/deposits/:id/reject"| Reject deposit
-"GET /api/admin/withdrawals"| Withdrawal administration
-"POST /api/admin/withdrawals/:id/approve"| Approve withdrawal
-"POST /api/admin/withdrawals/:id/reject"| Reject withdrawal
-"GET /api/admin/customers"| Customer management
-"GET/POST /api/admin/promos"| Promo management
-"GET /api/admin/audit-logs"| Audit logs
-"GET/PUT /api/admin/settings"| System settings
+| Endpoint | Description |
+|----------|--------------|
+| `GET /api/health` | API health check |
+| `POST /api/auth/register` | Customer registration |
+| `POST /api/auth/login` | Customer login |
+| `GET /api/auth/me` | Current authenticated user |
+| `GET /api/users/dashboard` | Customer dashboard |
+| `POST /api/deposits` | Create deposit request |
+| `GET /api/deposits/my` | Customer deposit history |
+| `POST /api/deposits/upload-url` | Request receipt upload URL |
+| `PUT /api/deposits/upload/:key` | Upload receipt |
+| `POST /api/withdrawals` | Create withdrawal request |
+| `GET /api/withdrawals/my` | Customer withdrawal history |
+| `GET /api/payment-accounts` | Public payment accounts |
+| `GET /api/notifications` | Customer notifications |
+| `GET /api/public/landing` | Public landing data |
+| `GET /api/admin/dashboard` | Admin dashboard |
+| `GET/POST /api/admin/deposits` | Deposit administration |
+| `POST /api/admin/deposits/:id/approve` | Approve deposit |
+| `POST /api/admin/deposits/:id/reject` | Reject deposit |
+| `GET /api/admin/withdrawals` | Withdrawal administration |
+| `POST /api/admin/withdrawals/:id/approve` | Approve withdrawal |
+| `POST /api/admin/withdrawals/:id/reject` | Reject withdrawal |
+| `GET /api/admin/customers` | Customer management |
+| `GET/POST /api/admin/promos` | Promo management |
+| `GET /api/admin/audit-logs` | Audit logs |
+| `GET/PUT /api/admin/settings` | System settings |
 
-«The actual backend route implementations are the source of truth for API behavior.»
+> The actual backend route implementations are the source of truth for API behavior.
 
 ---
 
-🔄 Deposit & Withdrawal Workflow
+## 🔄 Deposit & Withdrawal Workflow
 
+```
                    CUSTOMER
                        │
                        ▼
@@ -464,15 +483,17 @@ Endpoint| Description
                        │
                        ▼
                   NOTIFICATION
+```
 
 ---
 
-🧾 Transaction Safety
+## 🧾 Transaction Safety
 
 Financial workflows require special care around concurrency and retries.
 
 The application architecture uses concepts including:
 
+```
 Request
    ↓
 Authentication
@@ -490,6 +511,7 @@ Balance / State Update
 Audit Record
    ↓
 Notification / Background Work
+```
 
 For production, test these cases explicitly:
 
@@ -503,49 +525,50 @@ For production, test these cases explicitly:
 
 ---
 
-🛡️ Production Security Checklist
+## 🛡️ Production Security Checklist
 
 Before deploying publicly:
 
-[ ] Replace all development secrets
-[ ] Generate a strong JWT secret
-[ ] Never commit .env files
-[ ] Enable HTTPS
-[ ] Configure strict CORS
-[ ] Review authentication expiration
-[ ] Review all authorization rules
-[ ] Test idempotency under retries
-[ ] Test concurrent financial requests
-[ ] Validate receipt uploads
-[ ] Restrict upload size and MIME types
-[ ] Use durable object storage for production uploads
-[ ] Review WebView permissions
-[ ] Configure Android release signing
-[ ] Remove demo credentials
-[ ] Review audit logging
-[ ] Run dependency vulnerability audits
-[ ] Configure database backups
-[ ] Configure monitoring and alerts
-[ ] Test disaster recovery
-[ ] Review applicable laws and platform policies
+- [ ] Replace all development secrets
+- [ ] Generate a strong JWT secret
+- [ ] Never commit .env files
+- [ ] Enable HTTPS
+- [ ] Configure strict CORS
+- [ ] Review authentication expiration
+- [ ] Review all authorization rules
+- [ ] Test idempotency under retries
+- [ ] Test concurrent financial requests
+- [ ] Validate receipt uploads
+- [ ] Restrict upload size and MIME types
+- [ ] Use durable object storage for production uploads
+- [ ] Review WebView permissions
+- [ ] Configure Android release signing
+- [ ] Remove demo credentials
+- [ ] Review audit logging
+- [ ] Run dependency vulnerability audits
+- [ ] Configure database backups
+- [ ] Configure monitoring and alerts
+- [ ] Test disaster recovery
+- [ ] Review applicable laws and platform policies
 
 ---
 
-🧪 Development Commands
+## 🧪 Development Commands
 
-Frontend
+**Frontend**
 
+```bash
 cd frontend
-
 npm install
 npm run dev
 npm run build
 npm run preview
+```
 
-Backend
+**Backend**
 
+```bash
 cd backend
-
 npm install
 npm run dev
 npm run build
@@ -554,12 +577,13 @@ npm start
 npm run db:generate
 npm run db:push
 npm run db:seed
+```
 
 ---
 
-🗺️ Roadmap
+## 🗺️ Roadmap
 
-✅ Implemented
+### ✅ Implemented
 
 - [x] Mobile-first web interface
 - [x] React + TypeScript frontend
@@ -576,7 +600,7 @@ npm run db:seed
 - [x] Audit-log support
 - [x] Android WebView client
 
-🚧 Planned Improvements
+### 🚧 Planned Improvements
 
 - [ ] Expand automated test coverage
 - [ ] Production-grade object storage
@@ -591,28 +615,28 @@ npm run db:seed
 
 ---
 
-🧑‍💻 Development Philosophy
+## 🧑‍💻 Development Philosophy
 
-🇬🇧 Build with purpose.
+**🇬🇧 Build with purpose.**
 
 Good software should be:
 
-⚡ Fast
-🔐 Secure
-🛡️ Reliable
-🧩 Maintainable
-📱 User-Friendly
-📈 Scalable
+- ⚡ Fast
+- 🔐 Secure
+- 🛡️ Reliable
+- 🧩 Maintainable
+- 📱 User-Friendly
+- 📈 Scalable
 
-🇱🇰 හොඳ Software එකක් කියන්නේ...
+**🇱🇰 හොඳ Software එකක් කියන්නේ...**
 
-«වේගවත් + ආරක්ෂිත + විශ්වසනීය + භාවිතයට පහසු + Maintainable»
+*«වේගවත් + ආරක්ෂිත + විශ්වසනීය + භාවිතයට පහසු + Maintainable»*
 
 ---
 
-👨‍💻 Author
+## 👨‍💻 Author
 
-Lakmal Vidana Gamage 🇱🇰
+**Lakmal Vidana Gamage 🇱🇰**
 
 Developer focused on:
 
@@ -634,20 +658,22 @@ Developer focused on:
   <a href="https://lakmal2078.github.io/gamagemarketing/">
     <img src="https://img.shields.io/badge/Portfolio-Visit-00A67E?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Portfolio">
   </a>
-</p>---
-
-📄 License
-
-This project documentation previously referenced the MIT License.
-
-If this repository is intended to be distributed under MIT, make sure a matching "LICENSE" file containing the official MIT License text exists in the repository.
+</p>
 
 ---
 
-<p align="center">🇱🇰 Built from Sri Lanka • Designed for practical digital experiences 🚀
+## 📄 License
 
+This project documentation previously referenced the MIT License.
+
+If this repository is intended to be distributed under MIT, make sure a matching `LICENSE` file containing the official MIT License text exists in the repository.
+
+---
+
+<p align="center">
+🇱🇰 Built from Sri Lanka • Designed for practical digital experiences 🚀
+<br>
 Code • Create • Learn • Improve • Repeat
-
+<br>
 ⭐ Explore the repository and follow the development journey.
-
 </p>
